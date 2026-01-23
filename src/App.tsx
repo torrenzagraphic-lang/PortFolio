@@ -14,7 +14,12 @@ const App = () => {
   const reducedMotion = useReducedMotion();
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={!!reducedMotion}>
+    <ThemeProvider
+  attribute="class"
+  defaultTheme="light"
+  enableSystem={false}
+  disableTransitionOnChange={!!reducedMotion}
+>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
