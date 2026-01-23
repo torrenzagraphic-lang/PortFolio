@@ -143,4 +143,18 @@ export const projects: ProjectItem[] = [
       "Firebase security rules to protect user data",
     ],
   },
+  {
+  title: "MoldTrack Pro",
+  description:
+    "A production and mold management dashboard for tracking molds, inventory, job status, and real-time operational insights.",
+  tech: ["React", "TypeScript", "JavaScript", "Tailwind CSS"],
+  href: "https://moldmaster-hub.vercel.app/",
+  highlights: [
+    "Real-time dashboard for mold tracking and production monitoring",
+    "Responsive UI built with Tailwind CSS",
+    "Modular React architecture for scalability",
+    "Optimized performance with TypeScript safety",
+    "User-friendly interface for operations and reporting",
+  ],
+},
 ];
