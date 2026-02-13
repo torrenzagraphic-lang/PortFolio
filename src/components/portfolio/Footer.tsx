@@ -13,7 +13,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-2">
             <a
-              href={profile.socials.github}
+              href='https://github.com/Daarshan23'
               target="_blank"
               rel="noreferrer"
               className="rounded-xl border border-border/60 bg-card/40 p-2 text-muted-foreground shadow-soft transition-colors hover:bg-accent hover:text-accent-foreground"
@@ -22,8 +22,8 @@ export default function Footer() {
               <Github className="h-4 w-4" />
             </a>
             <a
-              href={profile.socials.linkedin}
-              target="https://in.linkedin.com/in/darshan-jain-developer"
+              href="https://in.linkedin.com/in/darshan-jain-developer"
+              target="_blank"
               rel="noreferrer"
               className="rounded-xl border border-border/60 bg-card/40 p-2 text-muted-foreground shadow-soft transition-colors hover:bg-accent hover:text-accent-foreground"
               aria-label="LinkedIn"
@@ -31,7 +31,7 @@ export default function Footer() {
               <Linkedin className="h-4 w-4" />
             </a>
             <a
-              href={profile.socials.email}
+              href='mailto:djcodes.in@gmail.com'
               className="rounded-xl border border-border/60 bg-card/40 p-2 text-muted-foreground shadow-soft transition-colors hover:bg-accent hover:text-accent-foreground"
               aria-label="Email"
             >
