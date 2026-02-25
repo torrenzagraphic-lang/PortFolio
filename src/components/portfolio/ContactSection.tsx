@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMemo, useState } from "react";
-//import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/client";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80),
