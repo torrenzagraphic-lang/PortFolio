@@ -1,5 +1,3 @@
-import { useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
@@ -14,7 +12,80 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-type Testimonial = Tables<"testimonials">;
+type Testimonial = {
+  id: string;
+  author_name: string;
+  author_title: string | null;
+  avatar_url: string | null;
+  company: string | null;
+  content: string;
+  rating: number | null;
+  featured: boolean;
+  sort_order: number;
+};
+
+const hardcodedTestimonials: Testimonial[] = [
+  {
+    id: "1",
+    author_name: "Harsh Rajput",
+    author_title: "Founder & CEO",
+    avatar_url: null,
+    company: "CpxD Solutions",
+    content:
+      "Darshan delivered polished UI with excellent performance and clean architecture, ahead of schedule.",
+    rating: 5,
+    featured: true,
+    sort_order: 1,
+  },
+  {
+    id: "2",
+    author_name: "Krushnam Patel",
+    author_title: "Founder",
+    avatar_url: null,
+    company: "Travel Agency",
+    content:
+      "Great communication, smooth execution, and thoughtful UX decisions throughout the project.",
+    rating: 5,
+    featured: true,
+    sort_order: 2,
+  },
+  {
+    id: "3",
+    author_name: "Amar Dodiya",
+    author_title: "Founder & CEO",
+    avatar_url: null,
+    company: "Torrenza Mould Craft PVT. LTD.",
+    content:
+      "Reliable frontend craftsmanship with strong React patterns and reusable component systems.",
+    rating: 4,
+    featured: false,
+    sort_order: 3,
+  },
+  {
+    id: "4",
+    author_name: "Sumit Suthar",
+    author_title: "Product Manager",
+    avatar_url: null,
+    company: "Tech Startup",
+    content:
+      "Darshan's expertise in frontend development and UI/UX design significantly enhanced our product's user experience.",
+    rating: 4,
+    featured: false,
+    sort_order: 3,
+  },
+  {
+    id: "5",
+    author_name: "Raj Shah",
+    author_title: "Co-founder",
+    avatar_url: null,
+    company: "E-state Startup",
+    content:
+      "Darshan frontend development skills and attention to detail greatly improved our application's performance and user interface.",
+    rating: 4,
+    featured: false,
+    sort_order: 3,
+  },
+];
 
 function initials(name: string) {
   return name
@@ -45,32 +116,19 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
-async function fetchTestimonials(): Promise<Testimonial[]> {
-  const { data, error } = await supabase
-    .from("testimonials")
-    .select("*")
-    .order("featured", { ascending: false })
-    .order("sort_order", { ascending: true })
-    .order("created_at", { ascending: false });
-
-  if (error) throw error;
-  return data ?? [];
-}
-
 export default function TestimonialsSection() {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["testimonials"],
-    queryFn: fetchTestimonials,
+  const items = [...hardcodedTestimonials].sort((a, b) => {
+    if (a.featured !== b.featured) return Number(b.featured) - Number(a.featured);
+    if (a.sort_order !== b.sort_order) return a.sort_order - b.sort_order;
+    return 0;
   });
-
-  const items = useMemo(() => data ?? [], [data]);
 
   return (
     <Section
       id="testimonials"
       eyebrow="Kind words"
       title="Testimonials"
-      description="Public reviews pulled live from the backend."
+      description="Selected client feedback."
       className="py-16 sm:py-20"
     >
       <div className="relative">
@@ -83,20 +141,7 @@ export default function TestimonialsSection() {
           aria-hidden="true"
         />
 
-        {isLoading ? (
-          <div className="grid gap-4 md:grid-cols-2">
-            {Array.from({ length: 2 }).map((_, idx) => (
-              <div
-                key={idx}
-                className="h-44 rounded-2xl border border-border/60 bg-card/50 shadow-soft backdrop-blur-xl"
-              />
-            ))}
-          </div>
-        ) : isError ? (
-          <div className="rounded-2xl border border-border/60 bg-card/50 p-6 text-sm text-muted-foreground shadow-soft backdrop-blur-xl">
-            Unable to load testimonials right now.
-          </div>
-        ) : items.length === 0 ? (
+        {items.length === 0 ? (
           <div className="rounded-2xl border border-border/60 bg-card/50 p-6 text-sm text-muted-foreground shadow-soft backdrop-blur-xl">
             No testimonials yet.
           </div>
@@ -107,10 +152,7 @@ export default function TestimonialsSection() {
           >
             <CarouselContent>
               {items.map((t, idx) => (
-                <CarouselItem
-                  key={t.id}
-                  className="basis-full md:basis-1/2"
-                >
+                <CarouselItem key={t.id} className="basis-full md:basis-1/2">
                   <motion.div
                     initial={{ opacity: 0, y: 14 }}
                     whileInView={{ opacity: 1, y: 0 }}

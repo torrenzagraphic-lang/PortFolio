@@ -7,6 +7,7 @@ import TestimonialsSection from "@/components/portfolio/TestimonialsSection";
 import CvSection from "@/components/portfolio/CvSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import Footer from "@/components/portfolio/Footer";
+import WhatsAppFloat from "@/components/portfolio/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -29,7 +30,7 @@ const Index = () => {
         <CvSection />
         <ContactSection />
       </main>
-
+      <WhatsAppFloat/>
       <Footer />
     </div>
   );
