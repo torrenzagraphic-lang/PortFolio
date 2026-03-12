@@ -21,14 +21,20 @@ export type ProjectItem = {
 
 export const profile = {
   name: "Jain Darshan",
-  headline: "React & React Native Developer",
+  brand: "DJCodes",
+
+  headline: "DJCodes – React & React Native Developer",
+
   subhead:
-    "I build fast, elegant products with premium UI polish—web, mobile, and interactive 3D.",
-  location: "Remote",
+    "Hi, I'm Jain Darshan. I build modern web and mobile apps using React and React Native.",
+
+  location: "Ahmedabad, India",
+
   availability: "Available for full-time & contract",
+
   socials: {
-    github: "https://github.com/",
-    linkedin: "https://www.linkedin.com/",
+    github: "https://github.com/Daarshan23",
+    linkedin: "https://linkedin.com/in/darshan-jain-developer",
     email: "mailto:dj631125@gmail.com",
   },
 } as const;

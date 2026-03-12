@@ -117,13 +117,8 @@ export default function ThreeHero() {
             {profile.availability} · {profile.location}
           </motion.p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl"
-          >
-            <span className="text-gradient">Premium</span> {profile.headline}
+          <motion.h1 className="mt-6 text-4xl font-semibold sm:text-5xl lg:text-6xl">
+            <span className="text-gradient">DJCodes</span> – React & React Native Developer
           </motion.h1>
 
           <motion.p
