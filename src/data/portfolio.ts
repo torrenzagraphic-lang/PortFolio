@@ -106,6 +106,22 @@ export const experience: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
     {
+        title: "Last24hrs",
+        description:
+            "A social media app where users can upload photos that automatically disappear after 24 hours, inspired by modern ephemeral content platforms.",
+        tech: ["React Native", "TypeScript", "Supabase"],
+        href: "https://drive.google.com/uc?export=download&id=1-EH8BTH_1wL3U412qFcxRyL1_dOox4d6",
+
+        highlights: [
+            "Upload photos that automatically expire after 24 hours",
+            "Realtime backend powered by Supabase",
+            "Secure user authentication and media storage",
+            "Smooth mobile UI built with React Native",
+            "Optimized performance with efficient data syncing",
+            "Clean and modern user experience",
+        ],
+    },
+    {
         title: "MoldTrack Pro",
         description:
             "A production and mold management dashboard for tracking molds, inventory, job status, and real-time operational insights.",
@@ -119,6 +135,7 @@ export const projects: ProjectItem[] = [
             "User-friendly interface for operations and reporting",
         ],
     },
+
     {
         title: "Anime-Gallery",
         description:
@@ -161,5 +178,4 @@ export const projects: ProjectItem[] = [
             "Firebase security rules to protect user data",
         ],
     },
-  
 ];
