@@ -65,8 +65,8 @@ export const skills: Skill[] = [
 export const experience: ExperienceItem[] = [
     {
         company: "Torrenza Mould Craft Pvt Ltd. — Ahmedabad, Gujarat",
-        role: "Jr MERN Stack Developer",
-        duration: "June 2024 — Present",
+        role: "Jr Software Developer",
+        duration: "July 2024 — Present",
         achievements: [
             "Developed and maintained dynamic web applications using the MERN stack.",
             "Designed RESTful APIs for data retrieval and manipulation, ensuring seamless communication between frontend and backend.",
@@ -78,9 +78,9 @@ export const experience: ExperienceItem[] = [
         ],
     },
     {
-        company: "Royal Technosoft — Ahmedabad, Gujarat",
+        company: "Grownited Private Limited  — Ahmedabad, Gujarat",
         role: "Full Stack Developer Intern",
-        duration: "Jan 2024 — May 2024",
+        duration: "Jan 2024 — Jun 2024",
         achievements: [
             "Developed full-stack applications with a focus on frontend and backend integration using the MERN stack.",
             "Designed and implemented user authentication and authorization mechanisms.",
